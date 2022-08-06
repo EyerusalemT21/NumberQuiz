@@ -9,7 +9,6 @@ const ques = questions.questions;
 const ans = questions.answers;
 
 app.set('views', path.join(__dirname, '/views'));
-//app.use(express.static(path.join( __dirname, '/public')));
 app.use(express.urlencoded({extended:false}));
 
 app.set("view engine","pug");
@@ -18,12 +17,9 @@ var count = 0;
 var score = 0;
 var session;
 
-//const oneDay = 1000*60*60*24;
-
 app.use(sessions({
     secret: "Salt for cookie signing",
     saveUninitialized: true,
-   // cookie:{maxAge:oneDay},
     resave: false
 }));
 
